@@ -1,7 +1,7 @@
 import numpy as np
 import cv2 as cv
-
-def find_extrema(img, labeled):
+from max_perim_id import max_perim_id
+def find_extrema(labeled):
 
     min_area = 10e3
     max_area = 0
@@ -30,15 +30,3 @@ def find_extrema(img, labeled):
     extrema = {"max_area":max_area, "min_area": min_area, "max_area_id":max_area_id, "min_area_id":min_area_id}
 
     return extrema
-
-
-
-def max_perim_id(contours):
-    max_perim_id = -1
-    max_perim = -1
-    for i in xrange(0,len(contours)):
-        perim = cv.arcLength(contours[i], True)
-        if(perim >= max_perim):
-            max_perim = perim
-            max_perim_id = i
-    return max_perim_id, max_perim

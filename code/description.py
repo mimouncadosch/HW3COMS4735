@@ -2,6 +2,7 @@ from __future__ import division
 import cv2 as cv
 import numpy as np
 from numpy import linalg as LA
+from max_perim_id import max_perim_id
 
 def description(img, mask, id, extrema):
     # Find geometric features and English descriptions of building: centroid, area, extrema of Minimum Bounding Rectangle,
@@ -226,15 +227,3 @@ def square_or_rectangular(w,h):
     if ( w/h < (1+thresh) ) or ( w/h > (1-thresh) ):
         return 'sq'
     return 'rect'
-
-# Find longest contour in image.
-# In general, there should be only one contour per image
-def max_perim_id(contours):
-    max_perim_id = -1
-    max_perim = -1
-    for i in xrange(0,len(contours)):
-        perim = cv.arcLength(contours[i], True)
-        if(perim >= max_perim):
-            max_perim = perim
-            max_perim_id = i
-    return max_perim_id, max_perim
