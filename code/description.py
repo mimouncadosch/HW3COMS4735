@@ -3,7 +3,7 @@ import cv2 as cv
 import numpy as np
 from numpy import linalg as LA
 
-def description(img, mask, id):
+def description(img, mask, id, extrema):
     # Find geometric features and English descriptions of building: centroid, area, extrema of Minimum Bounding Rectangle,
 
     # (1) Geometric features
@@ -18,7 +18,7 @@ def description(img, mask, id):
     ctr_color = (0, 0, 255)
     cv.drawContours(img, contours, max_pid, ctr_color, 2, 8)
 
-    area = cv.contourArea(contours[0])
+    area = cv.contourArea(contours[max_pid])
 
     # Find image moments
     m = cv.moments(contours[max_pid])
@@ -48,13 +48,15 @@ def description(img, mask, id):
     # print symmetric(img, mbr, area)
     # img_shape = img.shape
     # coord_extrema(mbr, id, img_shape)
+    # print size(area, extrema)
+    print size_superlative(id, extrema)
 
-    # print northernmost(contours[max_pid], id)
+
     # letter_shape(img, contours[max_pid])
     # print orientation(m, img)
     cv.imshow("img", img)
     cv.waitKey(0)
-
+    #
     # print square_or_rectangular(w,h)
 
     return geom_features
@@ -143,10 +145,32 @@ def coord_extrema(mbr, id, img_shape):
 
     return extrema
 
-# Up to here tested & validated
+def size(area, extrema):
+    # Todo: parameter s
+    s = 1.5 # s > 1
 
-def size(area):
-    return True
+    a_max = extrema['max_area']
+    a_min = extrema['min_area']
+    # According to thesis p. 49
+    if (area <= s*a_min) and not (area >= (1/s)*a_max):
+        size = "small"
+
+    if (area >= (1/s)*a_max) and not (area <= s*a_min):
+        size = "big"
+
+    if (area < (1/s)*a_max) and area > s*a_min:
+        size = "medium"
+
+    return size
+
+def size_superlative(id, extrema):
+    superlative = False
+    if extrema['max_area_id'] == id:
+        superlative = "largest"
+    elif extrema['min_area_id'] == id:
+        superlative = "smallest"
+    return superlative
+# Up to here tested & validated
 
 def letter_shape(img, contour):
     if len(contour) >= 5:
