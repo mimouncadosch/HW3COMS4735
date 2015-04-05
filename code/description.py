@@ -4,7 +4,7 @@ import numpy as np
 from numpy import linalg as LA
 from max_perim_id import max_perim_id
 
-def description(img, mask, id, extrema):
+def description(img, mask, id, extrema, mbrs):
     # Find geometric features and English descriptions of building: centroid, area, extrema of Minimum Bounding Rectangle,
 
     # (1) Geometric features
@@ -32,14 +32,15 @@ def description(img, mask, id, extrema):
     # Compute MBR
     x,y,w,h = cv.boundingRect(contours[max_pid])
     mbr = [x,y,w,h]
-
+    mbrs.append(mbr)
     # Upper left, Bottom right of MBR
     ul = (x,y)
     br = (x+w, y+h)
+
     geom_features = {"area":area, "cg":cg, "ul":ul, "br":br}
 
     cv.putText(img, str(id), (cg[0], cg[1]), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0,200, 0))
-    cv.rectangle(img, (x,y), (x+w,y+h), (255,0,100), 2)
+    # cv.rectangle(img, (x,y), (x+w,y+h), (255,0,100), 2)
 
     # (2) Find English description of building
     # Each function gives the answer for a given description,
@@ -50,13 +51,13 @@ def description(img, mask, id, extrema):
     # img_shape = img.shape
     # coord_extrema(mbr, id, img_shape)
     # print size(area, extrema)
-    print size_superlative(id, extrema)
+    # print size_superlative(id, extrema)
 
 
     # letter_shape(img, contours[max_pid])
     # print orientation(m, img)
-    cv.imshow("img", img)
-    cv.waitKey(0)
+    # cv.imshow("img", img)
+    # cv.waitKey(0)
     #
     # print square_or_rectangular(w,h)
 

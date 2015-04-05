@@ -1,3 +1,4 @@
+import cv2 as cv
 # Find longest contour in image.
 # In general, there should be only one contour per image
 def max_perim_id(contours):
