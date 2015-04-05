@@ -13,8 +13,8 @@ def spatial_relationships(labeled, S, G, img, mbrs):
     xs, ys, ws, hs = (mbr_s[i] for i in range(4))
     xg, yg, wg, hg = (mbr_g[i] for i in range(4))
 
-    cv.rectangle(img, (xs, ys), (xs+ws, ys+hs), (255,0,100), 2)
-    cv.rectangle(img, (xg, yg), (xg+wg, yg+hg), (255,0,100), 2)
+    # cv.rectangle(img, (xs, ys), (xs+ws, ys+hs), (255,0,100), 2)
+    # cv.rectangle(img, (xg, yg), (xg+wg, yg+hg), (255,0,100), 2)
     cv.putText(img, "S", (S[0],S[1]), cv.FONT_HERSHEY_COMPLEX, 0.5, (0,100,200))
     cv.putText(img, "G", (G[0],G[1]), cv.FONT_HERSHEY_COMPLEX, 0.5, (0,100,200))
 
@@ -25,6 +25,7 @@ def spatial_relationships(labeled, S, G, img, mbrs):
     # print south(mbr_s, mbr_g)
     # print east(mbr_s, mbr_g)
     # print west(mbr_s, mbr_g)
+    print near(img, mbr_s, mbr_g)
 
     # cv.waitKey(0)
 
@@ -92,6 +93,40 @@ def west(mbr_s, mbr_g):
         return  True
     return False
 
-def near(S,G):
+def near(img, mbr_s, mbr_g):
+    xs = mbr_s[0]
+    xg = mbr_g[0]
+    ws = mbr_s[2]
+    wg = mbr_g[2]
+    ys = mbr_s[1]
+    yg = mbr_g[1]
+    hs = mbr_s[3]
+    hg = mbr_g[3]
+
+    dx = abs(xs - xg)
+    dy = abs(ys - yg)
+    print "dx", dx
+    print "dy", dy
+
+    p = 0.01
+    # Enlarged MBRs
+    Ws = int(ws+p*hs)
+    Hs = int(hs+p*ws)
+
+    Wg = int(wg+p*hg)
+    Hg = int(hg+p*wg)
+
+    cv.rectangle(img, (xs, ys), (xs+Ws, ys+Hs), (255,0,100), 2)
+    cv.rectangle(img, (xg, yg), (xg+Wg, yg+Hg), (255,0,100), 2)
+
+    print "Ws+Wg", Ws+Wg
+    print "Hs+Hg", Hs+Hg
+    cv.imshow("enlarged", img)
+    cv.waitKey(0)
+
+
+    if dx <= (Ws + Wg) and dy <= (Hs+Hg):
+        return True
+
     return False
 
