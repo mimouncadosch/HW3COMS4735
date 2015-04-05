@@ -21,11 +21,11 @@ def spatial_relationships(labeled, S, G, img, mbrs):
     # cv.imshow("image", img)
 
     print "img size", img.shape
-    # print north(mbr_s, mbr_g)
+    print north(mbr_s, mbr_g)
     # print south(mbr_s, mbr_g)
     # print east(mbr_s, mbr_g)
     # print west(mbr_s, mbr_g)
-    print near(img, mbr_s, mbr_g)
+    # print near(img, mbr_s, mbr_g)
 
     # cv.waitKey(0)
 
@@ -51,9 +51,7 @@ def north(mbr_s, mbr_g):
     hs = mbr_s[3]
     hg = mbr_g[3]
 
-    dy = (ys - yg)
-    if (hs+hg) <= dy:
-        print "north"
+    if ys >= yg + hg:
         return True
     return False
 
@@ -63,9 +61,7 @@ def south(mbr_s, mbr_g):
     hs = mbr_s[3]
     hg = mbr_g[3]
 
-    dy = (ys - yg)
-    if hs+hg >= dy:
-        print "south"
+    if yg >= ys + hs:
         return True
     return False
 
@@ -75,10 +71,8 @@ def east(mbr_s, mbr_g):
     ws = mbr_s[2]
     wg = mbr_g[2]
 
-    dx = (xs - xg)
-    if ws+wg  <= dx:
-        print "east"
-        return  True
+    if xs >= xg+wg:
+        return True
     return False
 
 def west(mbr_s, mbr_g):
@@ -87,10 +81,8 @@ def west(mbr_s, mbr_g):
     ws = mbr_s[2]
     wg = mbr_g[2]
 
-    dx = (xs - xg)
-    if ws+wg  >= dx:
-        print "west"
-        return  True
+    if xg >= xs+ws:
+        return True
     return False
 
 def near(img, mbr_s, mbr_g):
@@ -108,6 +100,7 @@ def near(img, mbr_s, mbr_g):
     print "dx", dx
     print "dy", dy
 
+    # Abella p.50
     p = 0.01
     # Enlarged MBRs
     Ws = int(ws+p*hs)
@@ -116,13 +109,13 @@ def near(img, mbr_s, mbr_g):
     Wg = int(wg+p*hg)
     Hg = int(hg+p*wg)
 
-    cv.rectangle(img, (xs, ys), (xs+Ws, ys+Hs), (255,0,100), 2)
-    cv.rectangle(img, (xg, yg), (xg+Wg, yg+Hg), (255,0,100), 2)
+    # cv.rectangle(img, (xs, ys), (xs+Ws, ys+Hs), (255,0,100), 2)
+    # cv.rectangle(img, (xg, yg), (xg+Wg, yg+Hg), (255,0,100), 2)
 
-    print "Ws+Wg", Ws+Wg
-    print "Hs+Hg", Hs+Hg
-    cv.imshow("enlarged", img)
-    cv.waitKey(0)
+    # print "Ws+Wg", Ws+Wg
+    # print "Hs+Hg", Hs+Hg
+    # cv.imshow("enlarged", img)
+    # cv.waitKey(0)
 
 
     if dx <= (Ws + Wg) and dy <= (Hs+Hg):
