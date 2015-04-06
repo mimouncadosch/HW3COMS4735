@@ -21,11 +21,11 @@ def spatial_relationships(labeled, S, G, img, mbrs):
     # cv.imshow("image", img)
 
     print "img size", img.shape
-    print north(mbr_s, mbr_g)
+    # print north(mbr_s, mbr_g)
     # print south(mbr_s, mbr_g)
     # print east(mbr_s, mbr_g)
     # print west(mbr_s, mbr_g)
-    # print near(img, mbr_s, mbr_g)
+    print near(img, mbr_s, mbr_g)
 
     # cv.waitKey(0)
 
@@ -88,38 +88,52 @@ def west(mbr_s, mbr_g):
 def near(img, mbr_s, mbr_g):
     xs = mbr_s[0]
     xg = mbr_g[0]
+    Xs = mbr_s[0]+mbr_s[2]
+    Xg = mbr_g[0]+mbr_g[2]
     ws = mbr_s[2]
     wg = mbr_g[2]
     ys = mbr_s[1]
     yg = mbr_g[1]
+    Ys = mbr_s[1]+mbr_s[3]
+    Yg = mbr_g[1]+mbr_g[3]
     hs = mbr_s[3]
     hg = mbr_g[3]
 
-    dx = abs(xs - xg)
-    dy = abs(ys - yg)
-    print "dx", dx
-    print "dy", dy
+    # TODO: thresh
+    p = 1.5
+    # Find if horizontally close
+    hor_close = False
+    if xs < Xg:
+        dx = Xg - xs
+    elif Xg < Xs:
+        dx = Xs - xg
 
-    # Abella p.50
-    p = 0.01
-    # Enlarged MBRs
-    Ws = int(ws+p*hs)
-    Hs = int(hs+p*ws)
+    if dx <= p*(ws+wg):
+        hor_close = True
 
-    Wg = int(wg+p*hg)
-    Hg = int(hg+p*wg)
+    # Find if vertically close
+    ver_close = False
+    if ys < Yg:
+        dy = Yg - ys
+    elif Yg < Ys:
+        dy = Ys - yg
 
-    # cv.rectangle(img, (xs, ys), (xs+Ws, ys+Hs), (255,0,100), 2)
-    # cv.rectangle(img, (xg, yg), (xg+Wg, yg+Hg), (255,0,100), 2)
+    if dy <= p*(hs+hg):
+        ver_close = True
+
+
+    near = hor_close and ver_close
+
+    cv.rectangle(img, (xs, ys), (xs+ws, ys+hs), (255,0,100), 2)
+    cv.rectangle(img, (xg, yg), (xg+wg, yg+hg), (255,0,100), 2)
+    cv.imshow("img", img)
+    cv.waitKey(0)
+    return near
+
+
+
 
     # print "Ws+Wg", Ws+Wg
     # print "Hs+Hg", Hs+Hg
-    # cv.imshow("enlarged", img)
-    # cv.waitKey(0)
 
-
-    if dx <= (Ws + Wg) and dy <= (Hs+Hg):
-        return True
-
-    return False
 
