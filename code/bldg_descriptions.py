@@ -1,5 +1,0 @@
-
-
-def centroid():
-
-    return True

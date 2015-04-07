@@ -6,8 +6,9 @@ from spatial_rels import *
 def transitivity(mbrs, img):
 
     T = create_matrix(mbrs)
-    names = get_building_names()
+    names = get_building_names(mbrs)
 
+    n = len(mbrs)
     # Loop through each source
     for s in range(27):
         print_spatial_rels(s, names, T)
@@ -30,7 +31,7 @@ def print_spatial_rels(s, names, T):
         print str
     return True
 
-def get_building_names():
+def get_building_names(mbrs):
     names = []
     with open("../data/ass3-table.txt") as f:
         content = f.readlines()
@@ -38,6 +39,13 @@ def get_building_names():
             m = re.findall("\"(.+)\"", content[i])
             name = m[0]
             names.append(name)
+
+    if len(mbrs) ==28:
+        mbrs.append("Source")
+    if len(mbrs) == 29:
+        mbrs.append("Source")
+        mbrs.append("Goal")
+
     return names
 
 
