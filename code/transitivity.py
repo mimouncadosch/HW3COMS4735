@@ -8,43 +8,27 @@ def transitivity(mbrs, img):
     T = create_matrix(mbrs)
     names = get_building_names()
 
+    # Loop through each source
     for s in range(27):
-        name = names[s]
-        for p in range(5):
-            if p == 0:
-                str ="North of " + name + " is "
-                for g in range(0,27):
-                    if T[g,s,p] == 1:
-                        str += names[g] + ","
-            if p == 1:
-                str = "South of " + name + " is "
-                for g in range(0,27):
-                    if T[g,s,p] == 1:
-                        str += names[g] + ", "
-            if p == 2:
-                str = "East of " + name + " is "
-                for g in range(0,27):
-                    if T[g,s,p] == 1:
-                        str += names[g] + ", "
+        print_spatial_rels(s, names, T)
 
-            if p == 3:
-                str = "West of " + name + " is "
-                for g in range(0,27):
-                    if T[g,s,p] == 1:
-                        str += names[g] + ", "
 
-            if p == 4:
-                str = "Near " + name + " is "
-                for g in range(0,27):
-                    if T[g,s,p] == 1:
-                        str += names[g] + ", "
-            print str
-        print "\n"
-
-    cv.imshow("img", img)
-    cv.waitKey(0)
+    # cv.imshow("img", img)
+    # cv.waitKey(0)
     return True
 
+def print_spatial_rels(s, names, T):
+    rels = ['North', 'South', 'East', 'West', 'Near']   # spatial relationships
+    for p in range(5):
+        if np.sum(T[:,s,p]) == 0:
+            continue
+        str = rels[p] + " of " + names[s] + " is: "
+        for g in range(0,27):
+            if T[g, s, p] == 1:
+                str += names[g] + " , "
+
+        print str
+    return True
 
 def get_building_names():
     names = []
@@ -115,8 +99,6 @@ def create_matrix(mbrs):
 
                 near_f_ri = T[ri,f, 4]
 
-                if f == 11 and ri == 12 and rj == 8:
-                    print "here"
                 if near_ri_rj and (west_ri_rj or east_ri_rj) and (south_f_ri or north_f_ri) and near_f_ri:
                     T[rj, f, 4] = 0 # implied
 

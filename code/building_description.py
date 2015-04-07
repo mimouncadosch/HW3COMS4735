@@ -4,7 +4,7 @@ import numpy as np
 from numpy import linalg as LA
 from max_perim_id import max_perim_id
 
-def description(img, mask, id, extrema, mbrs):
+def building_description(img, mask, id, extrema, mbrs):
     # Find geometric features and English descriptions of building: centroid, area, extrema of Minimum Bounding Rectangle,
 
     # (1) Geometric features
