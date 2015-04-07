@@ -10,26 +10,23 @@ def spatial_relationships(labeled, S, G, img, mbrs):
     mbr_s = mbrs[s_id-1]
     mbr_g = mbrs[g_id-1]
 
-    xs, ys, ws, hs = (mbr_s[i] for i in range(4))
-    xg, yg, wg, hg = (mbr_g[i] for i in range(4))
-
+    # xs, ys, ws, hs = (mbr_s[i] for i in range(4))
+    # xg, yg, wg, hg = (mbr_g[i] for i in range(4))
     # cv.rectangle(img, (xs, ys), (xs+ws, ys+hs), (255,0,100), 2)
     # cv.rectangle(img, (xg, yg), (xg+wg, yg+hg), (255,0,100), 2)
-    cv.putText(img, "S", (S[0],S[1]), cv.FONT_HERSHEY_COMPLEX, 0.5, (0,100,200))
-    cv.putText(img, "G", (G[0],G[1]), cv.FONT_HERSHEY_COMPLEX, 0.5, (0,100,200))
+    # cv.putText(img, "S", (S[0],S[1]), cv.FONT_HERSHEY_COMPLEX, 0.5, (0,100,200))
+    # cv.putText(img, "G", (G[0],G[1]), cv.FONT_HERSHEY_COMPLEX, 0.5, (0,100,200))
 
     # cv.imshow("image", img)
 
-    print "img size", img.shape
-    # print north(mbr_s, mbr_g)
-    # print south(mbr_s, mbr_g)
-    # print east(mbr_s, mbr_g)
-    # print west(mbr_s, mbr_g)
-    print near(img, mbr_s, mbr_g)
+    # print "img size", img.shape
+    print strict_west(mbrs, s_id-1, g_id-1)
+    # print near(mbrs, s_id-1, g_id-1)
 
     # cv.waitKey(0)
 
 # Return ids of buildings containing source and target points
+# Ids returned are indexed (1,28), similar to names
 def get_bld_ids(mbrs, S, G):
     s_id, g_id = (-1 for i in range(2))
     for i in range(len(mbrs)):
@@ -45,47 +42,126 @@ def in_mbr(P, mbr):
         return True
     return False
 
-def north(mbr_s, mbr_g):
+# For north, south, east, west, near:
+# mbrs: array of minimum bounding rectangles
+# s: id of source building (indexed 0-26)
+# g: id of goal building (indexed 0-26)
+def north(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
+    ys = mbr_s[1]
+    yg = mbr_g[1]
+    hg = mbr_g[3]
+
+    if ys >= yg + hg/2:
+        return True
+    return False
+
+def strict_north(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
+    ys = mbr_s[1]
+    yg = mbr_g[1]
+    hg = mbr_g[3]
+    xs = mbr_s[0]
+    Xs = mbr_s[0]+mbr_s[2]
+    xg = mbr_g[0]
+    Xg = mbr_g[0]+mbr_g[2]
+
+    # TODO: thresh
+    P = 30
+    if ys >= yg + hg/2 and Xs > xg - P and Xg + P > xs:
+        return True
+    return False
+
+def south(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
     ys = mbr_s[1]
     yg = mbr_g[1]
     hs = mbr_s[3]
-    hg = mbr_g[3]
 
-    if ys >= yg + hg:
+    if yg >= ys + hs/2:
         return True
     return False
 
-def south(mbr_s, mbr_g):
+def strict_south(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
     ys = mbr_s[1]
     yg = mbr_g[1]
     hs = mbr_s[3]
-    hg = mbr_g[3]
+    xs = mbr_s[0]
+    Xs = mbr_s[0]+mbr_s[2]
+    xg = mbr_g[0]
+    Xg = mbr_g[0]+mbr_g[2]
 
-    if yg >= ys + hs:
+    # TODO: thresh
+    P = 30
+    if yg >= ys + hs/2 and Xs > xg - P and Xg + P > xs:
         return True
     return False
 
-def east(mbr_s, mbr_g):
+def east(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
+    xs = mbr_s[0]
+    xg = mbr_g[0]
+    wg = mbr_g[2]
+
+    if xs >= xg + wg/2:
+        return True
+    return False
+
+def strict_east(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
+    xs = mbr_s[0]
+    xg = mbr_g[0]
+    wg = mbr_g[2]
+    ys = mbr_s[1]
+    Ys = mbr_s[1]+mbr_s[3]
+    yg = mbr_g[1]
+    Yg = mbr_g[1]+mbr_g[3]
+
+    # TODO: thresh
+    P = 30
+    if xs >= xg + wg/2 and Ys > yg - P and Yg + P > ys:
+        return True
+    return False
+
+def west(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
     xs = mbr_s[0]
     xg = mbr_g[0]
     ws = mbr_s[2]
-    wg = mbr_g[2]
 
-    if xs >= xg+wg:
+    if xg >= xs + ws/2:
         return True
     return False
 
-def west(mbr_s, mbr_g):
+
+def strict_west(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
     xs = mbr_s[0]
     xg = mbr_g[0]
     ws = mbr_s[2]
-    wg = mbr_g[2]
+    ys = mbr_s[1]
+    Ys = mbr_s[1]+mbr_s[3]
+    yg = mbr_g[1]
+    Yg = mbr_g[1]+mbr_g[3]
 
-    if xg >= xs+ws:
+    # TODO: thresh
+    P = 30
+    if xg >= xs + ws/2 and Ys > yg - P and Yg + P > ys:
         return True
     return False
 
-def near(img, mbr_s, mbr_g):
+def near(mbrs, s_id, g_id):
+    mbr_s = mbrs[s_id]
+    mbr_g = mbrs[g_id]
     xs = mbr_s[0]
     xg = mbr_g[0]
     Xs = mbr_s[0]+mbr_s[2]
@@ -124,16 +200,5 @@ def near(img, mbr_s, mbr_g):
 
     near = hor_close and ver_close
 
-    cv.rectangle(img, (xs, ys), (xs+ws, ys+hs), (255,0,100), 2)
-    cv.rectangle(img, (xg, yg), (xg+wg, yg+hg), (255,0,100), 2)
-    cv.imshow("img", img)
-    cv.waitKey(0)
     return near
-
-
-
-
-    # print "Ws+Wg", Ws+Wg
-    # print "Hs+Hg", Hs+Hg
-
 

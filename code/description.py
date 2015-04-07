@@ -172,7 +172,10 @@ def size_superlative(id, extrema):
     elif extrema['min_area_id'] == id:
         superlative = "smallest"
     return superlative
-# Up to here tested & validated
+
+################################################################
+# Up to here tested & validated ################################
+################################################################
 
 def letter_shape(img, contour):
     if len(contour) >= 5:

@@ -6,7 +6,7 @@
 6="Schermerhorn"
 7="Chandler & Havemeyer"
 8="Computer Center"
-9="Avery"
+9="Avery"	
 10="Fayerweather"
 11="Mathematics"
 12="Low Library"

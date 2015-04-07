@@ -4,6 +4,7 @@ from description import *
 from extrema import *
 from spatial_rels import *
 from time import sleep
+from transitivity import *
 
 S = (-1, -1)
 G = (-1, -1)
@@ -20,27 +21,30 @@ def main():
     extrema = find_extrema(labeled)
     building_descriptions(img, labeled, extrema, mbrs)
 
-    cv.namedWindow("image")
-    cv.setMouseCallback("image", capture_position)
-
-    # display the image and wait for a keypress
-    cv.imshow("image", img)
-    cv.waitKey(0) & 0xFF
-
-    # Show source and goal points
-    cv.circle(img, S, 1, (255,0,0),2)
-    cv.circle(img, G, 1, (255,0,0),2)
-
+    # cv.namedWindow("image")
+    # cv.setMouseCallback("image", capture_position)
+    # #
+    # # # display the image and wait for a keypress
+    # cv.imshow("image", img)
+    # cv.waitKey(0) & 0xFF
+    #
+    # # Show source and goal points
+    # cv.circle(img, S, 1, (255,0,0),2)
+    # cv.circle(img, G, 1, (255,0,0),2)
     # cv.imshow("image", img)
     # cv.waitKey(0)
+    #
+    # spatial_relationships(labeled, S, G, img, mbrs)
 
-    spatial_relationships(labeled, S, G, img, mbrs)
+    transitivity(mbrs, img)
+    # get_name(2)
+
 
     return True
 
 def building_descriptions(img, labeled, extrema, mbrs):
     # Iterate through each building to find descriptions
-    for i in xrange(1, 28):
+    for i in range(1, 28):
         bld = np.uint8(labeled[:,:,0] == i) # Building mask. All three channels of labeled are equal
         # Return geometric features (centroid, area, area, upper left of MBR) and English description
         description(img, bld, i, extrema, mbrs)
