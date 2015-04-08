@@ -36,9 +36,9 @@ def main():
     cv.waitKey(0)
 
     # spatial_relationships(labeled, S, G, img, mbrs)
-    virtual_blds(mbrs, S, G)
+    # virtual_blds(mbrs, S, G)
     T = transitivity(mbrs, img)
-    # source_and_goal_description(S, G, T)
+    source_and_goal_description(mbrs, S, G, T)
     # get_name(2)
 
 

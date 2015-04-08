@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d2ed68-a08f-4160-aa5b-b94f12ab633d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/main.py" afterPath="$PROJECT_DIR$/code/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/source_and_goal_description.py" afterPath="$PROJECT_DIR$/code/source_and_goal_description.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/spatial_rels.py" afterPath="$PROJECT_DIR$/code/spatial_rels.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/transitivity.py" afterPath="$PROJECT_DIR$/code/transitivity.py" />
@@ -28,14 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34039333" vertical-offset="0" max-vertical-offset="1215">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <state vertical-scroll-proportion="-7.5" vertical-offset="390" max-vertical-offset="1215">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1428510164000" expanded="true" signature="497:840" placeholder="..." />
+                <marker date="1428518848000" expanded="true" signature="497:840" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -44,8 +45,8 @@
       <file leaf-file-name="spatial_rels.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/spatial_rels.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3150">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="3165">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -53,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transitivity.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="transitivity.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/transitivity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="1845">
-              <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.1603631" vertical-offset="1154" max-vertical-offset="2250">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -68,9 +69,11 @@
       <file leaf-file-name="source_and_goal_description.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/source_and_goal_description.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,10 +102,10 @@
         <option value="$PROJECT_DIR$/code/extrema.py" />
         <option value="$PROJECT_DIR$/code/max_perim_id.py" />
         <option value="$PROJECT_DIR$/code/description.py" />
-        <option value="$PROJECT_DIR$/code/transitivity.py" />
-        <option value="$PROJECT_DIR$/code/source_and_goal_description.py" />
         <option value="$PROJECT_DIR$/code/spatial_rels.py" />
+        <option value="$PROJECT_DIR$/code/source_and_goal_description.py" />
         <option value="$PROJECT_DIR$/code/main.py" />
+        <option value="$PROJECT_DIR$/code/transitivity.py" />
       </list>
     </option>
   </component>
@@ -492,7 +495,11 @@
       <created>1428405575506</created>
       <updated>1428405575506</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Step 3 added description for S,G (Done)&#10;&#10;&#10;&#10;&#10;&#10;">
+      <created>1428510429712</created>
+      <updated>1428510429712</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -517,14 +524,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1135" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12760417" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12760417" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39962476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12760417" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39962476" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -566,7 +573,8 @@
     <MESSAGE value="Step 2 strict coordinates&#10;&#10;&#10;&#10;&#10;" />
     <MESSAGE value="Step 2: near filtering completed&#10;&#10;&#10;&#10;&#10;" />
     <MESSAGE value="Step 3 before switching to adding I&#10;&#10;&#10;&#10;&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 3 before switching to adding I&#10;&#10;&#10;&#10;&#10;&#10;" />
+    <MESSAGE value="Step 3 added description for S,G (Done)&#10;&#10;&#10;&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 3 added description for S,G (Done)&#10;&#10;&#10;&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,20 +585,15 @@
           <option name="timeStamp" value="132" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/code/transitivity.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="244" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/code/transitivity.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="256" />
+          <url>file://$PROJECT_DIR$/code/main.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="276" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="257" />
+      <option name="time" value="278" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -691,20 +694,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/transitivity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="1845">
-          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/spatial_rels.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3150">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="3165">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -713,19 +706,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/source_and_goal_description.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34039333" vertical-offset="0" max-vertical-offset="1215">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state vertical-scroll-proportion="-7.5" vertical-offset="390" max-vertical-offset="1215">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1428510164000" expanded="true" signature="497:840" placeholder="..." />
+            <marker date="1428518848000" expanded="true" signature="497:840" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/transitivity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1603631" vertical-offset="1154" max-vertical-offset="2250">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

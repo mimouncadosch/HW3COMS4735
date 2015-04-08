@@ -36,6 +36,7 @@ def get_bld_ids(mbrs, S, G):
             g_id = i+1
     return s_id, g_id
 
+# Returns true if points P is inside the MBR
 def in_mbr(P, mbr):
     x,y,w,h = (mbr[i] for i in range(4))
     if P[0] <= (x+w) and P[1] <= (y+h) and P[0] >= x and P[1] >= y:
