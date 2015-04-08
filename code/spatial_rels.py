@@ -20,7 +20,7 @@ def spatial_relationships(labeled, S, G, img, mbrs):
     # cv.imshow("image", img)
 
     # print "img size", img.shape
-    print strict_west(mbrs, s_id-1, g_id-1)
+    # print strict_north(mbrs, s_id-1, g_id-1, 10)
     # print near(mbrs, s_id-1, g_id-1)
 
     # cv.waitKey(0)
@@ -57,7 +57,7 @@ def north(mbrs, s_id, g_id):
         return True
     return False
 
-def strict_north(mbrs, s_id, g_id):
+def strict_north(mbrs, s_id, g_id, P):
     mbr_s = mbrs[s_id]
     mbr_g = mbrs[g_id]
     ys = mbr_s[1]
@@ -69,7 +69,7 @@ def strict_north(mbrs, s_id, g_id):
     Xg = mbr_g[0]+mbr_g[2]
 
     # TODO: thresh
-    P = 30
+    # P = 30
     if ys >= yg + hg/2 and Xs > xg - P and Xg + P > xs:
         return True
     return False
@@ -85,7 +85,7 @@ def south(mbrs, s_id, g_id):
         return True
     return False
 
-def strict_south(mbrs, s_id, g_id):
+def strict_south(mbrs, s_id, g_id, P):
     mbr_s = mbrs[s_id]
     mbr_g = mbrs[g_id]
     ys = mbr_s[1]
@@ -97,7 +97,7 @@ def strict_south(mbrs, s_id, g_id):
     Xg = mbr_g[0]+mbr_g[2]
 
     # TODO: thresh
-    P = 30
+    # P = 30
     if yg >= ys + hs/2 and Xs > xg - P and Xg + P > xs:
         return True
     return False
@@ -113,7 +113,7 @@ def east(mbrs, s_id, g_id):
         return True
     return False
 
-def strict_east(mbrs, s_id, g_id):
+def strict_east(mbrs, s_id, g_id, P):
     mbr_s = mbrs[s_id]
     mbr_g = mbrs[g_id]
     xs = mbr_s[0]
@@ -125,7 +125,7 @@ def strict_east(mbrs, s_id, g_id):
     Yg = mbr_g[1]+mbr_g[3]
 
     # TODO: thresh
-    P = 30
+    # P = 30
     if xs >= xg + wg/2 and Ys > yg - P and Yg + P > ys:
         return True
     return False
@@ -142,7 +142,7 @@ def west(mbrs, s_id, g_id):
     return False
 
 
-def strict_west(mbrs, s_id, g_id):
+def strict_west(mbrs, s_id, g_id, P):
     mbr_s = mbrs[s_id]
     mbr_g = mbrs[g_id]
     xs = mbr_s[0]
@@ -154,7 +154,7 @@ def strict_west(mbrs, s_id, g_id):
     Yg = mbr_g[1]+mbr_g[3]
 
     # TODO: thresh
-    P = 30
+    # P = 30
     if xg >= xs + ws/2 and Ys > yg - P and Yg + P > ys:
         return True
     return False

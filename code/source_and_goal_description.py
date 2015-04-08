@@ -8,11 +8,15 @@ def virtual_blds(mbrs, S, G):
     # TODO: param
     # Length and width of the width added to the MBR of the virtual building
     # Here the MBR is assumed to be a square
-    l = 10
+    l = 20
     # Virtual building upper right (x,y), width and height
-    x = S[0]-l/2
-    y = S[1] -l/2
-    mbrs.append([x,y,l,l])
+    xs = S[0] - l/2
+    ys = S[1] - l/2
+
+    xg = G[0] - l/2
+    yg = G[1] - l/2
+    mbrs.append([xs, ys, l, l])
+    mbrs.append([xg, yg, l, l])
 
     return True
 
