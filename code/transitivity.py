@@ -17,7 +17,6 @@ def transitivity(mbrs, img):
 
 """
 Prints spatial relationships contained in matrix T
-
 """
 def print_spatial_rels(source, names, T):
     n = T.shape[0]  # number of goals
@@ -65,6 +64,8 @@ def create_matrix(mbrs):
             for g in range(n):
                 mbr_s = mbrs[s]
                 mbr_g = mbrs[g]
+
+                # Relevant points in building's MBR
                 # S = xs, Xs, ys, Ys, ws, hs
                 # G = xg, Xg, yg, Yg, wg, hg
                 S = mbr_s[0], mbr_s[0]+mbr_s[2], mbr_s[1], mbr_s[1]+mbr_s[3], mbr_s[2], mbr_s[3]
@@ -87,7 +88,9 @@ def create_matrix(mbrs):
     # M is filtered
     return M
 
-# Filter the matrix of size n x n
+"""
+Filter the matrix of size n x n
+"""
 def filter_matrix(T, M):
 
     m = M.shape[1]  # number of sources
@@ -107,8 +110,8 @@ def filter_matrix(T, M):
 Filter each column of the matrix by transitivity
 f is the index of the source building
 p is the index relationship (0,1,2,3,4 for N,S,E,W,Near)
-T is the source transitivity matrix
-M is the destination transitivity matrix
+T is the unfiltered transitivity matrix
+M is the filtered transitivity matrix
 """
 def filter_col_by_transitivity(T, M, f, p):
     n = T.shape[0]
@@ -125,7 +128,8 @@ def filter_col_by_transitivity(T, M, f, p):
 Filter each column of the matrix for "nearness"
 f is the index of the source building
 p is the index relationship (0,1,2,3,4 for N,S,E,W,Near)
-T is the matrix
+T is the unfiltered transitivity matrix
+M is the filtered transitivity matrix
 """
 def filter_col_by_near(T, M, f):
     n = T.shape[0]

@@ -5,29 +5,22 @@ from transitivity import *
 
 
 def source_and_goal_description(mbrs, S, G, T):
-    # Create tiny, "virtual" buildings for S and G pixels
-    mbr_s = virtual_bld(S)
-    mbr_g = virtual_bld(G)
 
-    # Create an (n x 2) matrxi describing the unfiltered relationship between S,G and the rest of the buildings
-    n = T.shape[0]  # number of goal buildings
-    M = np.zeros((n, 2, 5))
-
-    # M is the matrix we wish to filter, using the relationships in M
-    create_s_and_g_matrix(mbr_s, mbr_g, mbrs, T, M)
+    # Create an (n x 2) matrix describing the filtered relationship between S,G and the rest of the buildings
+    M = create_s_and_g_matrix(S, G, mbrs, T)
 
     # Return ids of buildings containing source and target points
     # Ids returned are indexed (1,28), similar to names
     s_id, g_id = get_bld_ids(mbrs, S, G)
     names = get_building_names(mbrs)
-    # if s_id > -1:
-    #     print "Source in " + names[s_id-1]
-    #     names.append("Source")
-    #     print_spatial_rels_for_s_and_g(0, names, M)
-    # if g_id > -1:
-    #     print "Goal in " + names[g_id-1]
-    #     names.append("Goal")
-    #     print_spatial_rels_for_s_and_g(1, names, M)
+    if s_id > -1:
+        print "Source in " + names[s_id-1]
+        names.append("Source")
+        print_spatial_rels_for_s_and_g(0, names, M)
+    if g_id > -1:
+        print "Goal in " + names[g_id-1]
+        names.append("Goal")
+        print_spatial_rels_for_s_and_g(1, names, M)
 
     # TODO: PRINT Relationshiops to S, G
 
@@ -37,7 +30,6 @@ def source_and_goal_description(mbrs, S, G, T):
 
 """
 Prints spatial relationships contained in matrix T
-
 """
 def print_spatial_rels_for_s_and_g(source, names, T):
     n = T.shape[0]  # number of goals
@@ -79,13 +71,13 @@ def pixel_strict_north(xg, yg, mbrs, s_id, P):
         return True
     return False
 
-
+"""
+This function creates a virtual building.
+Our description of relative locations is based on building-pairs.
+So it is necessary to treat the source and goal as buildings.
+Buildings are represented by their MBR
+"""
 def virtual_bld(P):
-    # This function creates a virtual building.
-    # Our description of relative locations is based on building-pairs.
-    # So it is necessary to treat the source and goal as buildings.
-    # Buildings are represented by their MBR
-
     # TODO: param
     # Length and width of the width added to the MBR of the virtual building
     # Here the MBR is assumed to be a square
@@ -98,27 +90,44 @@ def virtual_bld(P):
 
     return mbr
 
-def create_s_and_g_matrix(mbr_s, mbr_g, mbrs, T, M):
-    n = M.shape[0]
+"""
+"""
+def create_s_and_g_matrix(S, G, mbrs, T):
+    n = T.shape[0]  # number of goal buildings
+    M = np.zeros((n, 2, 5)) # M contains the relationships for S and G with all other buildings
     # TODO: Param P
     P = 10
 
+    # Create tiny, "virtual" buildings for S and G pixels
+    mbr_s = virtual_bld(S)
+    mbr_g = virtual_bld(G)
+    virtual_blds = [mbr_s, mbr_g]
+
     for p in range(5):
-        # Iterate through source and goal
+        # Iterate through source
         for s in range(2):
             # Iterate through each building as goal
             for g in range(n):
+                mbr_s = virtual_blds[s]
+                mbr_g = mbrs[g]
+
+                # S = xs, Xs, ys, Ys, ws, hs
+                # G = xg, Xg, yg, Yg, wg, hg
+                S = mbr_s[0], mbr_s[0]+mbr_s[2], mbr_s[1], mbr_s[1]+mbr_s[3], mbr_s[2], mbr_s[3]
+                G = mbr_g[0], mbr_g[0]+mbr_g[2], mbr_g[1], mbr_g[1]+mbr_g[3], mbr_g[2], mbr_g[3]
+
                 if p == 0:
-                    M[g, s, p] = strict_north(mbrs, s, g, P)
+                    M[g, s, p] = strict_north(S, G, P)
                 if p == 1:
-                    M[g, s, p] = strict_south(mbrs, s,g, P)
+                    M[g, s, p] = strict_south(S, G, P)
                 if p == 2:
-                    M[g, s, p] = strict_east(mbrs, s,g, P)
+                    M[g, s, p] = strict_east(S, G, P)
                 if p == 3:
-                    M[g, s, p] = strict_west(mbrs, s,g, P)
+                    M[g, s, p] = strict_west(S, G, P)
                 if p == 4:
-                    M[g, s, p] = near(mbrs, s,g)
+                    M[g, s, p] = near(S, G)
+
 
     filter_matrix(T, M)
 
-    return True
+    return M
