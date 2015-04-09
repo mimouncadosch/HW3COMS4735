@@ -118,7 +118,7 @@ def filter_col_by_transitivity(T, M, f, p):
     for ri in range(n):
         for rj in range(n):
             # Indices must be indexed from (0,27)
-            p_f_ri     = T[ri, f, p]
+            p_f_ri     = M[ri, f, p]
             p_ri_rj    = T[rj, ri, p]
             if p_f_ri == True and p_ri_rj == True:
                 M[rj, f, p] = 0
@@ -138,15 +138,15 @@ def filter_col_by_near(T, M, f):
             near_ri_rj = T[rj, ri, 4]
             west_ri_rj = T[rj, ri, 3]
             east_ri_rj = T[rj, ri, 2]
-            south_f_ri = T[ri, f, 1]
-            north_f_ri = T[ri, f, 0]
+            south_f_ri = M[ri, f, 1]
+            north_f_ri = M[ri, f, 0]
 
             north_ri_rj = T[rj, ri, 0]
             south_ri_rj = T[rj, ri, 1]
-            east_f_ri = T[ri, f, 2]
-            west_f_ri = T[ri, f, 3]
+            east_f_ri = M[ri, f, 2]
+            west_f_ri = M[ri, f, 3]
 
-            near_f_ri = T[ri,f, 4]
+            near_f_ri = M[ri,f, 4]
 
             if near_ri_rj and (west_ri_rj or east_ri_rj) and (south_f_ri or north_f_ri) and near_f_ri:
                 M[rj, f, 4] = 0 # implied

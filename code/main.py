@@ -22,23 +22,23 @@ def main():
     extrema = find_extrema(labeled)
     building_descriptions(img, labeled, extrema, mbrs)
 
-    cv.namedWindow("image")
-    cv.setMouseCallback("image", capture_position)
+    # cv.namedWindow("image")
+    # cv.setMouseCallback("image", capture_position)
+    # #
+    # # # display the image and wait for a keypress
+    # cv.imshow("image", img)
+    # cv.waitKey(0) & 0xFF
     #
-    # # display the image and wait for a keypress
-    cv.imshow("image", img)
-    cv.waitKey(0) & 0xFF
-
-    # Show source and goal points
-    cv.circle(img, S, 1, (255,0,0),2)
-    cv.circle(img, G, 1, (255,0,0),2)
-    cv.imshow("image", img)
-    cv.waitKey(0)
+    # # Show source and goal points
+    # cv.circle(img, S, 1, (255,0,0),2)
+    # cv.circle(img, G, 1, (255,0,0),2)
+    # cv.imshow("image", img)
+    # cv.waitKey(0)
 
     # spatial_relationships(labeled, S, G, img, mbrs)
 
     T = transitivity(mbrs, img)
-    source_and_goal_description(mbrs, S, G, T)
+    source_and_goal_description(mbrs, S, G, T, img)
     # get_name(2)
 
 

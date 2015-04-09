@@ -4,58 +4,86 @@ from spatial_rels import *
 from transitivity import *
 
 
-def source_and_goal_description(mbrs, S, G, T):
+def source_and_goal_description(mbrs, S, G, T, img):
 
     # Create an (n x 2) matrix describing the filtered relationship between S,G and the rest of the buildings
     M = create_s_and_g_matrix(S, G, mbrs, T)
 
     # Return ids of buildings containing source and target points
     # Ids returned are indexed (1,28), similar to names
-    s_id, g_id = get_bld_ids(mbrs, S, G)
+    ids = get_bld_ids(mbrs, S, G)
     names = get_building_names(mbrs)
-    if s_id > -1:
-        print "Source in " + names[s_id-1]
-        names.append("Source")
-        print_spatial_rels_for_s_and_g(0, names, M)
-    if g_id > -1:
-        print "Goal in " + names[g_id-1]
-        names.append("Goal")
-        print_spatial_rels_for_s_and_g(1, names, M)
+    print_spatial_rels_for_s_and_g(ids, names, M)
 
-    # TODO: PRINT Relationshiops to S, G
-
-    # equivalence_class(T, mbrs)
+    equivalence_class(T, mbrs, img)
 
     return True
 
 """
 Prints spatial relationships contained in matrix T
 """
-def print_spatial_rels_for_s_and_g(source, names, T):
+def print_spatial_rels_for_s_and_g(ids, names, T):
     n = T.shape[0]  # number of goals
     rels = ['North', 'South', 'East', 'West', 'Near']   # spatial relationships
-    for p in range(5):
-        # Don't print anything if there is are no relationships p for source building with other buildings
-        if np.sum(T[:, source, p]) == 0:
-            continue
-        str = rels[p] + " of " + names[source+27] + " is: "
-        for g in range(n):
-            if T[g, source, p] == 1:
-                str += names[g] + " , "
-        print str
+    extra_names = ["Source", "Goal"]
+
+    for s in range(2):
+        if ids[s] > -1:
+            names.append(extra_names[s])
+            for p in range(5):
+                # Don't print anything if there is are no relationships p for source building with other buildings
+                if np.sum(T[:, s, p]) == 0:
+                    continue
+                str = rels[p] + " of " + names[s+27] + " is: "
+                for g in range(n):
+                    if T[g, s, p] == 1:
+                        str += names[g] + " , "
+                print str
     return True
 
-def equivalence_class(T, mbrs):
+def equivalence_class(T, mbrs, img):
     # Create a matrix
-    M = np.meshgrid()
-    vec_strict_north = np.vectorize(strict_north)
-    lerner = 24
+    # M = np.meshgrid()
+    # vec_strict_north = np.vectorize(strict_north)
+    pupin = 0
     P = 10
 
-    vect_sn = np.vectorize(pixel_strict_north)
-    vect_sn(M, M, mbrs, lerner, P)
+    # vect_sn = np.vectorize(pixel_strict_north)
+    # vect_sn(M, M, mbrs, lerner, P)
+
+    # For each building:
+    # for g in range(27):
+    # for p in range(5):
+    mbr_g = mbrs[11] # Low
+    G = mbr_g[0], mbr_g[0]+mbr_g[2], mbr_g[1], mbr_g[1]+mbr_g[3], mbr_g[2], mbr_g[3]
+    M = np.zeros((495,275), np.float32)
+    N = np.zeros((495,275), np.float32)
+    for c in range(495):
+        for r in range(275):
+            mbr_s = virtual_bld((r,c))
+            S = mbr_s[0], mbr_s[0]+mbr_s[2], mbr_s[1], mbr_s[1]+mbr_s[3], mbr_s[2], mbr_s[3]
+            # if p == 0:
+            M[c,r] = strict_north(S, G, P)
+            N[c,r] = strict_south(S, G, P)
+            # print M[c,r]
+                # if p == 1:
+                #     M[c,r] = strict_south(S, G, P)
+                # if p == 2:
+                #     M[c,r] = strict_east(S, G, P)
+                # if p == 3:
+                #     M[c,r] = strict_west(S, G, P)
+                # if p == 4:
+                #     M[c,r] = near(S, G)
+    M = M * 255
+    N = N * 255
+    # cv.imwrite("../images/M.jpg", M)
+    cv.imwrite("../images/N.jpg", N)
+                # print strict_south(S, G, P)
+
 
     return
+
+
 
 # Strictly north calculation for pixels
 def pixel_strict_north(xg, yg, mbrs, s_id, P):
