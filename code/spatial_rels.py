@@ -58,123 +58,42 @@ def north(mbrs, s_id, g_id):
         return True
     return False
 
-def strict_north(mbrs, s_id, g_id, P):
-    mbr_s = mbrs[s_id]
-    mbr_g = mbrs[g_id]
-    ys = mbr_s[1]
-    yg = mbr_g[1]
-    hg = mbr_g[3]
-    xs = mbr_s[0]
-    Xs = mbr_s[0]+mbr_s[2]
-    xg = mbr_g[0]
-    Xg = mbr_g[0]+mbr_g[2]
+def strict_north(S, G, P):
+    xs, Xs, ys, Ys, ws, hs = (S[i] for i in range(6))
+    xg, Xg, yg, Yg, wg, hg = (G[i] for i in range(6))
 
-    # TODO: thresh
-    # P = 30
     if ys >= yg + hg/2 and Xs > xg - P and Xg + P > xs:
         return True
     return False
 
-def south(mbrs, s_id, g_id):
-    mbr_s = mbrs[s_id]
-    mbr_g = mbrs[g_id]
-    ys = mbr_s[1]
-    yg = mbr_g[1]
-    hs = mbr_s[3]
+def strict_south(S, G, P):
+    xs, Xs, ys, Ys, ws, hs = (S[i] for i in range(6))
+    xg, Xg, yg, Yg, wg, hg = (G[i] for i in range(6))
 
-    if yg >= ys + hs/2:
-        return True
-    return False
-
-def strict_south(mbrs, s_id, g_id, P):
-    mbr_s = mbrs[s_id]
-    mbr_g = mbrs[g_id]
-    ys = mbr_s[1]
-    yg = mbr_g[1]
-    hs = mbr_s[3]
-    xs = mbr_s[0]
-    Xs = mbr_s[0]+mbr_s[2]
-    xg = mbr_g[0]
-    Xg = mbr_g[0]+mbr_g[2]
-
-    # TODO: thresh
-    # P = 30
     if yg >= ys + hs/2 and Xs > xg - P and Xg + P > xs:
         return True
     return False
 
-def east(mbrs, s_id, g_id):
-    mbr_s = mbrs[s_id]
-    mbr_g = mbrs[g_id]
-    xs = mbr_s[0]
-    xg = mbr_g[0]
-    wg = mbr_g[2]
+def strict_east(S, G, P):
+    xs, Xs, ys, Ys, ws, hs = (S[i] for i in range(6))
+    xg, Xg, yg, Yg, wg, hg = (G[i] for i in range(6))
 
-    if xs >= xg + wg/2:
-        return True
-    return False
-
-def strict_east(mbrs, s_id, g_id, P):
-    mbr_s = mbrs[s_id]
-    mbr_g = mbrs[g_id]
-    xs = mbr_s[0]
-    xg = mbr_g[0]
-    wg = mbr_g[2]
-    ys = mbr_s[1]
-    Ys = mbr_s[1]+mbr_s[3]
-    yg = mbr_g[1]
-    Yg = mbr_g[1]+mbr_g[3]
-
-    # TODO: thresh
-    # P = 30
     if xs >= xg + wg/2 and Ys > yg - P and Yg + P > ys:
         return True
     return False
 
-def west(mbrs, s_id, g_id):
-    mbr_s = mbrs[s_id]
-    mbr_g = mbrs[g_id]
-    xs = mbr_s[0]
-    xg = mbr_g[0]
-    ws = mbr_s[2]
 
-    if xg >= xs + ws/2:
-        return True
-    return False
+def strict_west(S, G, P):
+    xs, Xs, ys, Ys, ws, hs = (S[i] for i in range(6))
+    xg, Xg, yg, Yg, wg, hg = (G[i] for i in range(6))
 
-
-def strict_west(mbrs, s_id, g_id, P):
-    mbr_s = mbrs[s_id]
-    mbr_g = mbrs[g_id]
-    xs = mbr_s[0]
-    xg = mbr_g[0]
-    ws = mbr_s[2]
-    ys = mbr_s[1]
-    Ys = mbr_s[1]+mbr_s[3]
-    yg = mbr_g[1]
-    Yg = mbr_g[1]+mbr_g[3]
-
-    # TODO: thresh
-    # P = 30
     if xg >= xs + ws/2 and Ys > yg - P and Yg + P > ys:
         return True
     return False
 
-def near(mbrs, s_id, g_id):
-    mbr_s = mbrs[s_id]
-    mbr_g = mbrs[g_id]
-    xs = mbr_s[0]
-    xg = mbr_g[0]
-    Xs = mbr_s[0]+mbr_s[2]
-    Xg = mbr_g[0]+mbr_g[2]
-    ws = mbr_s[2]
-    wg = mbr_g[2]
-    ys = mbr_s[1]
-    yg = mbr_g[1]
-    Ys = mbr_s[1]+mbr_s[3]
-    Yg = mbr_g[1]+mbr_g[3]
-    hs = mbr_s[3]
-    hg = mbr_g[3]
+def near(S, G):
+    xs, Xs, ys, Ys, ws, hs = (S[i] for i in range(6))
+    xg, Xg, yg, Yg, wg, hg = (G[i] for i in range(6))
 
     # TODO: thresh
     p = 1.5

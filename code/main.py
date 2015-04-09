@@ -38,7 +38,7 @@ def main():
     # spatial_relationships(labeled, S, G, img, mbrs)
 
     T = transitivity(mbrs, img)
-    source_and_goal_description(mbrs, S, G, T)
+    # source_and_goal_description(mbrs, S, G, T)
     # get_name(2)
 
 

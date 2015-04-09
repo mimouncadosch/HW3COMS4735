@@ -11,21 +11,25 @@ def transitivity(mbrs, img):
     n = len(mbrs)
     # Loop through each source
     for s in range(n):
-        print_spatial_rels(s, names, T, mbrs)
+        print_spatial_rels(s, names, T)
 
     return T
 
-def print_spatial_rels(s, names, T, mbrs):
-    n = len(mbrs)
+"""
+Prints spatial relationships contained in matrix T
+
+"""
+def print_spatial_rels(source, names, T):
+    n = T.shape[0]  # number of goals
     rels = ['North', 'South', 'East', 'West', 'Near']   # spatial relationships
     for p in range(5):
-        if np.sum(T[:,s,p]) == 0:
+        # Don't print anything if there is are no relationships p for source building with other buildings
+        if np.sum(T[:, source, p]) == 0:
             continue
-        str = rels[p] + " of " + names[s] + " is: "
-        for g in range(0,n):
-            if T[g, s, p] == 1:
+        str = rels[p] + " of " + names[source] + " is: "
+        for g in range(n):
+            if T[g, source, p] == 1:
                 str += names[g] + " , "
-
         print str
     return True
 
@@ -38,16 +42,9 @@ def get_building_names(mbrs): #, include_s_and_g
             name = m[0]
             names.append(name)
 
-    # if len(mbrs) > 27 and include_s_and_g == True:
-    #     names.append("Source")
-    #     names.append("Goal")
+
 
     return names
-
-
-def get_name(id, names):
-
-    return True
 
 def create_matrix(mbrs):
     n = len(mbrs)
@@ -66,16 +63,23 @@ def create_matrix(mbrs):
         for s in range(n):
             # Iterate through each building as goal
             for g in range(n):
+                mbr_s = mbrs[s]
+                mbr_g = mbrs[g]
+                # S = xs, Xs, ys, Ys, ws, hs
+                # G = xg, Xg, yg, Yg, wg, hg
+                S = mbr_s[0], mbr_s[0]+mbr_s[2], mbr_s[1], mbr_s[1]+mbr_s[3], mbr_s[2], mbr_s[3]
+                G = mbr_g[0], mbr_g[0]+mbr_g[2], mbr_g[1], mbr_g[1]+mbr_g[3], mbr_g[2], mbr_g[3]
+
                 if p == 0:
-                    T[g, s, p] = strict_north(mbrs, s, g, P)
+                    T[g, s, p] = strict_north(S, G, P)
                 if p == 1:
-                    T[g, s, p] = strict_south(mbrs, s,g, P)
+                    T[g, s, p] = strict_south(S, G, P)
                 if p == 2:
-                    T[g, s, p] = strict_east(mbrs, s,g, P)
+                    T[g, s, p] = strict_east(S, G, P)
                 if p == 3:
-                    T[g, s, p] = strict_west(mbrs, s,g, P)
+                    T[g, s, p] = strict_west(S, G, P)
                 if p == 4:
-                    T[g, s, p] = near(mbrs, s,g)
+                    T[g, s, p] = near(S, G)
 
     M = np.copy(T)   # matrix to be filtered
     filter_matrix(T, M)
@@ -86,7 +90,6 @@ def create_matrix(mbrs):
 # Filter the matrix of size n x n
 def filter_matrix(T, M):
 
-    n = M.shape[0]  # number of goals
     m = M.shape[1]  # number of sources
 
     # Filter N, S, E, W relationships by transitivity
