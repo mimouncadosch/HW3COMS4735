@@ -15,18 +15,46 @@ def source_and_goal_description(mbrs, S, G, T, img):
     names = get_building_names(mbrs)
     print_spatial_rels_for_s_and_g(ids, names, M)
 
-    equivalence_class(T, mbrs, img)
+    # create_equivalence_classes(T, mbrs, img)
+
+    draw_point_clouds(S, G, M, img)
 
     return True
+
+
+def draw_point_clouds(S, G, M, img):
+
+    # Buildings related to S and their relation to S
+    blds_s = []
+    rels =  ['N', 'S', 'E', 'W', "Ne"]
+
+    I = np.ones((495, 275), np.uint8)
+    # For each relationship
+    for p in range(5):
+        # For each source building
+        for s in range(2):
+            # For each goal building
+            for g in range(27):
+                if M[g, s, p] == True:
+                    # J = np.ones((495, 275), np.float32)
+                    J = cv.imread("../images/" + str(rels[p]) + "_" + str(g) + ".png",0)
+                    I = cv.bitwise_and(I, J)
+
+    I = I * 255
+    cv.imshow("I", I)
+    cv.waitKey(0)
+    return True
+
 
 """
 Prints spatial relationships contained in matrix T
 """
 def print_spatial_rels_for_s_and_g(ids, names, T):
     n = T.shape[0]  # number of goals
-    rels = ['North', 'South', 'East', 'West', 'Near']   # spatial relationships
+    # rels = ['North', 'South', 'East', 'West', 'Near']   # spatial relationships
+    rels = ['South', 'North', 'West', 'East', 'Near']   # spatial relationships
     extra_names = ["Source", "Goal"]
-
+    print ids
     for s in range(2):
         if ids[s] > -1:
             names.append(extra_names[s])
@@ -34,14 +62,15 @@ def print_spatial_rels_for_s_and_g(ids, names, T):
                 # Don't print anything if there is are no relationships p for source building with other buildings
                 if np.sum(T[:, s, p]) == 0:
                     continue
-                str = rels[p] + " of " + names[s+27] + " is: "
+                str = names[s+27] + " is " + rels[p] + " of "
+                # str = rels[p] + " of " + names[s+27] + " is: "
                 for g in range(n):
                     if T[g, s, p] == 1:
                         str += names[g] + " , "
                 print str
     return True
 
-def equivalence_class(T, mbrs, img):
+def create_equivalence_classes(T, mbrs, img):
     # Create a matrix
     # M = np.meshgrid()
     # vec_strict_north = np.vectorize(strict_north)
@@ -54,31 +83,37 @@ def equivalence_class(T, mbrs, img):
     # For each building:
     # for g in range(27):
     # for p in range(5):
-    mbr_g = mbrs[11] # Low
-    G = mbr_g[0], mbr_g[0]+mbr_g[2], mbr_g[1], mbr_g[1]+mbr_g[3], mbr_g[2], mbr_g[3]
-    M = np.zeros((495,275), np.float32)
-    N = np.zeros((495,275), np.float32)
-    for c in range(495):
-        for r in range(275):
-            mbr_s = virtual_bld((r,c))
-            S = mbr_s[0], mbr_s[0]+mbr_s[2], mbr_s[1], mbr_s[1]+mbr_s[3], mbr_s[2], mbr_s[3]
-            # if p == 0:
-            M[c,r] = strict_north(S, G, P)
-            N[c,r] = strict_south(S, G, P)
-            # print M[c,r]
-                # if p == 1:
-                #     M[c,r] = strict_south(S, G, P)
-                # if p == 2:
-                #     M[c,r] = strict_east(S, G, P)
-                # if p == 3:
-                #     M[c,r] = strict_west(S, G, P)
-                # if p == 4:
-                #     M[c,r] = near(S, G)
-    M = M * 255
-    N = N * 255
-    # cv.imwrite("../images/M.jpg", M)
-    cv.imwrite("../images/N.jpg", N)
-                # print strict_south(S, G, P)
+
+    for s in range(27):
+        N = np.zeros((495,275), np.float32)
+        South = np.zeros((495,275), np.float32)
+        E = np.zeros((495,275), np.float32)
+        W = np.zeros((495,275), np.float32)
+        NE = np.zeros((495,275), np.float32)
+        for c in range(495):
+            for r in range(275):
+                mbr_s = mbrs[s]
+                S = mbr_s[0], mbr_s[0]+mbr_s[2], mbr_s[1], mbr_s[1]+mbr_s[3], mbr_s[2], mbr_s[3]
+                mbr_g = virtual_bld((r,c))
+                G = mbr_g[0], mbr_g[0]+mbr_g[2], mbr_g[1], mbr_g[1]+mbr_g[3], mbr_g[2], mbr_g[3]
+
+                N[c,r] = strict_north(S, G, P)
+                South[c,r] = strict_south(S, G, P)
+                E[c,r] = strict_east(S, G, P)
+                W[c,r] = strict_west(S, G, P)
+                NE[c,r] = near(S, G)
+
+        N = N * 255
+        South = South * 255
+        E = E * 255
+        W = W * 255
+        NE = NE * 255
+        cv.imwrite("../images/S_" + str(s) + ".png", N)
+        cv.imwrite("../images/N_" + str(s) + ".png", South)
+        cv.imwrite("../images/W_" + str(s) + ".png", E)
+        cv.imwrite("../images/E_" + str(s) + ".png", W)
+        cv.imwrite("../images/Ne_" + str(s) + ".png", NE)
+
 
 
     return
