@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d2ed68-a08f-4160-aa5b-b94f12ab633d" name="Default" comment="Step 3: fixed filtering for S, G&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/source_and_goal_description.py" afterPath="$PROJECT_DIR$/code/source_and_goal_description.py" />
+    <list default="true" id="20d2ed68-a08f-4160-aa5b-b94f12ab633d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="3_hw3_COMS_4735_mpc2160.iws" />
@@ -528,7 +527,11 @@
       <created>1428686842400</created>
       <updated>1428686842400</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Step 3: finished&#10;&#10;">
+      <created>1428689998935</created>
+      <updated>1428689998935</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -610,7 +613,8 @@
     <MESSAGE value="Step 3: clouds getting there." />
     <MESSAGE value="Step 3: created images for cloud pixels&#10;" />
     <MESSAGE value="Step 3: fixed filtering for S, G&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 3: fixed filtering for S, G&#10;" />
+    <MESSAGE value="Step 3: finished&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 3: finished&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
