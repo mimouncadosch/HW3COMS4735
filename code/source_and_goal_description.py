@@ -17,33 +17,39 @@ def source_and_goal_description(mbrs, S, G, T, img):
     names = get_building_names(mbrs)
     print_spatial_rels_for_s_and_g(ids, names, F)
 
-    # # create_equivalence_classes(T, mbrs, img)
-    #
-    # draw_point_clouds(S, G, M, img)
+    P = 40
+    # create_equivalence_classes(mbrs, P)
+
+    draw_point_clouds(F, P)
 
     return True
 
 
-def draw_point_clouds(S, G, M, img):
+def draw_point_clouds(M, P):
 
     # Buildings related to S and their relation to S
     blds_s = []
     rels =  ['N', 'S', 'E', 'W', "Ne"]
 
     I = np.ones((495, 275), np.uint8)
+
+    # Do it for source first
     # For each relationship
     for p in range(5):
-        # For each source building
-        for s in range(2):
+        # # For each source building
+        # for s in range(2):
             # For each goal building
             for g in range(27):
-                if M[g, s, p] == True:
+                if M[g, 0, p] == True: # s instead of 0
                     # J = np.ones((495, 275), np.float32)
-                    J = cv.imread("../images/" + str(rels[p]) + "_" + str(g) + ".png",0)
+                    J = cv.imread("../images/" + str(P) + "/" + str(rels[p]) + "_" + str(g) + ".png",0)
                     I = cv.bitwise_and(I, J)
+                    # I = I * 255
+                    # cv.imshow("I", I)
+                    # cv.waitKey(0)
 
     I = I * 255
-    cv.imshow("I", I)
+    cv.imshow("FINAL", I)
     cv.waitKey(0)
     return True
 
@@ -72,19 +78,8 @@ def print_spatial_rels_for_s_and_g(ids, names, T):
                 print str
     return True
 
-def create_equivalence_classes(T, mbrs, img):
+def create_equivalence_classes(mbrs, P):
     # Create a matrix
-    # M = np.meshgrid()
-    # vec_strict_north = np.vectorize(strict_north)
-    pupin = 0
-    P = 10
-
-    # vect_sn = np.vectorize(pixel_strict_north)
-    # vect_sn(M, M, mbrs, lerner, P)
-
-    # For each building:
-    # for g in range(27):
-    # for p in range(5):
 
     for s in range(27):
         N = np.zeros((495,275), np.float32)
@@ -110,15 +105,13 @@ def create_equivalence_classes(T, mbrs, img):
         E = E * 255
         W = W * 255
         NE = NE * 255
-        cv.imwrite("../images/S_" + str(s) + ".png", N)
-        cv.imwrite("../images/N_" + str(s) + ".png", South)
-        cv.imwrite("../images/W_" + str(s) + ".png", E)
-        cv.imwrite("../images/E_" + str(s) + ".png", W)
-        cv.imwrite("../images/Ne_" + str(s) + ".png", NE)
+        cv.imwrite("../images/" + str(P) + "/S_" + str(s) + ".png", N)
+        cv.imwrite("../images/" + str(P) + "/N_" + str(s) + ".png", South)
+        cv.imwrite("../images/" + str(P) + "/W_" + str(s) + ".png", E)
+        cv.imwrite("../images/" + str(P) + "/E_" + str(s) + ".png", W)
+        cv.imwrite("../images/" + str(P) + "/Ne_" + str(s) + ".png", NE)
 
-
-
-    return
+    return True
 
 
 
