@@ -2,7 +2,7 @@ import numpy as np
 import cv2 as cv
 from max_perim_id import max_perim_id
 
-def spatial_relationships(labeled, S, G, img, mbrs):
+def spatial_relationships(S, G, img, mbrs):
 
     # Get building ids
     s_id, g_id = get_bld_ids(mbrs, S, G)
@@ -18,9 +18,10 @@ def spatial_relationships(labeled, S, G, img, mbrs):
     # cv.putText(img, "G", (G[0],G[1]), cv.FONT_HERSHEY_COMPLEX, 0.5, (0,100,200))
 
     # cv.imshow("image", img)
-
+    S = mbr_s[0], mbr_s[0]+mbr_s[2], mbr_s[1], mbr_s[1]+mbr_s[3], mbr_s[2], mbr_s[3]
+    G = mbr_g[0], mbr_g[0]+mbr_g[2], mbr_g[1], mbr_g[1]+mbr_g[3], mbr_g[2], mbr_g[3]
     # print "img size", img.shape
-    # print strict_north(mbrs, s_id-1, g_id-1, 10)
+    print strict_south(S, G, 10)
     # print near(mbrs, s_id-1, g_id-1)
 
     # cv.waitKey(0)

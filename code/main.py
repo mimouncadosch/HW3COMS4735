@@ -35,9 +35,10 @@ def main():
     cv.imshow("image", img)
     cv.waitKey(0)
 
-    # spatial_relationships(labeled, S, G, img, mbrs)
+    # spatial_relationships(S, G, img, mbrs)
 
-    T = transitivity(mbrs, img)
+    # Unfiltered, filtered matrices
+    T, M = transitivity(mbrs, img)
     source_and_goal_description(mbrs, S, G, T, img)
     # get_name(2)
 

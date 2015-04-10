@@ -5,15 +5,15 @@ from spatial_rels import *
 
 def transitivity(mbrs, img):
 
-    T = create_matrix(mbrs)
+    T, M = create_matrix(mbrs)
     names = get_building_names(mbrs)
 
     n = len(mbrs)
     # Loop through each source
-    for s in range(n):
-        print_spatial_rels(s, names, T)
+    # for s in range(n):
+    #     print_spatial_rels(s, names, T)
 
-    return T
+    return T, M
 
 """
 Prints spatial relationships contained in matrix T
@@ -85,14 +85,15 @@ def create_matrix(mbrs):
     M = np.copy(T)   # matrix to be filtered
     filter_matrix(T, M)
 
-    # M is filtered
-    return M
+    # Return unfiltered, filtered matrices
+    return T, M
 
 """
 Filter the matrix of size n x n
+T is left unfiltered
+M is matrix to be filtered
 """
 def filter_matrix(T, M):
-
     m = M.shape[1]  # number of sources
 
     # Filter N, S, E, W relationships by transitivity
@@ -104,7 +105,7 @@ def filter_matrix(T, M):
     for f in range(m):
         filter_col_by_near(T, M, f)
 
-    return M
+    return True
 
 """
 Filter each column of the matrix by transitivity

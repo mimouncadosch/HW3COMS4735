@@ -3,21 +3,23 @@ from spatial_rels import *
 from spatial_rels import *
 from transitivity import *
 
-
+"""
+T is unfiltered relationship matrix
+"""
 def source_and_goal_description(mbrs, S, G, T, img):
 
     # Create an (n x 2) matrix describing the filtered relationship between S,G and the rest of the buildings
-    M = create_s_and_g_matrix(S, G, mbrs, T)
+    F = create_s_and_g_matrix(S, G, mbrs, T)
 
     # Return ids of buildings containing source and target points
     # Ids returned are indexed (1,28), similar to names
     ids = get_bld_ids(mbrs, S, G)
     names = get_building_names(mbrs)
-    print_spatial_rels_for_s_and_g(ids, names, M)
+    print_spatial_rels_for_s_and_g(ids, names, F)
 
-    # create_equivalence_classes(T, mbrs, img)
-
-    draw_point_clouds(S, G, M, img)
+    # # create_equivalence_classes(T, mbrs, img)
+    #
+    # draw_point_clouds(S, G, M, img)
 
     return True
 
@@ -51,8 +53,8 @@ Prints spatial relationships contained in matrix T
 """
 def print_spatial_rels_for_s_and_g(ids, names, T):
     n = T.shape[0]  # number of goals
-    # rels = ['North', 'South', 'East', 'West', 'Near']   # spatial relationships
-    rels = ['South', 'North', 'West', 'East', 'Near']   # spatial relationships
+    rels = ['North', 'South', 'East', 'West', 'Near']   # spatial relationships
+    # rels = ['South', 'North', 'West', 'East', 'Near']   # spatial relationships
     extra_names = ["Source", "Goal"]
     print ids
     for s in range(2):
@@ -62,8 +64,8 @@ def print_spatial_rels_for_s_and_g(ids, names, T):
                 # Don't print anything if there is are no relationships p for source building with other buildings
                 if np.sum(T[:, s, p]) == 0:
                     continue
-                str = names[s+27] + " is " + rels[p] + " of "
-                # str = rels[p] + " of " + names[s+27] + " is: "
+                # str = names[s+27] + " is " + rels[p] + " of "
+                str = rels[p] + " of " + names[s+27] + " is: "
                 for g in range(n):
                     if T[g, s, p] == 1:
                         str += names[g] + " , "
@@ -155,9 +157,9 @@ def virtual_bld(P):
 
 """
 """
-def create_s_and_g_matrix(S, G, mbrs, T):
-    n = T.shape[0]  # number of goal buildings
-    M = np.zeros((n, 2, 5)) # M contains the relationships for S and G with all other buildings
+def create_s_and_g_matrix(S, G, mbrs, M):
+    n = M.shape[0]  # number of goal buildings
+    F = np.zeros((n, 2, 5)) # M contains the relationships for S and G with all other buildings
     # TODO: Param P
     P = 10
 
@@ -180,17 +182,17 @@ def create_s_and_g_matrix(S, G, mbrs, T):
                 G = mbr_g[0], mbr_g[0]+mbr_g[2], mbr_g[1], mbr_g[1]+mbr_g[3], mbr_g[2], mbr_g[3]
 
                 if p == 0:
-                    M[g, s, p] = strict_north(S, G, P)
+                    F[g, s, p] = strict_north(S, G, P)
                 if p == 1:
-                    M[g, s, p] = strict_south(S, G, P)
+                    F[g, s, p] = strict_south(S, G, P)
                 if p == 2:
-                    M[g, s, p] = strict_east(S, G, P)
+                    F[g, s, p] = strict_east(S, G, P)
                 if p == 3:
-                    M[g, s, p] = strict_west(S, G, P)
+                    F[g, s, p] = strict_west(S, G, P)
                 if p == 4:
-                    M[g, s, p] = near(S, G)
+                    F[g, s, p] = near(S, G)
 
 
-    filter_matrix(T, M)
+    filter_matrix(M, F)
 
-    return M
+    return F

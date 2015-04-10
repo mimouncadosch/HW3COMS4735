@@ -2,144 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d2ed68-a08f-4160-aa5b-b94f12ab633d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/E_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/N_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Ne_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/S_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/W_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thesis.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/main.py" afterPath="$PROJECT_DIR$/code/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/source_and_goal_description.py" afterPath="$PROJECT_DIR$/code/source_and_goal_description.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/spatial_rels.py" afterPath="$PROJECT_DIR$/code/spatial_rels.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/transitivity.py" afterPath="$PROJECT_DIR$/code/transitivity.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="3_hw3_COMS_4735_mpc2160.iws" />
@@ -162,7 +28,57 @@
     <favorites_list name="3_hw3_COMS_4735_mpc2160" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="source_and_goal_description.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/source_and_goal_description.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
+              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#2395#3897#0" expanded="false" />
+                <element signature="e#3992#4217#0" expanded="false" />
+                <element signature="e#4460#4747#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="1230">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spatial_rels.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/spatial_rels.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transitivity.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/transitivity.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2183406" vertical-offset="0" max-vertical-offset="2400">
+              <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -188,8 +104,8 @@
         <option value="$PROJECT_DIR$/code/description.py" />
         <option value="$PROJECT_DIR$/code/spatial_rels.py" />
         <option value="$PROJECT_DIR$/code/transitivity.py" />
-        <option value="$PROJECT_DIR$/code/main.py" />
         <option value="$PROJECT_DIR$/code/source_and_goal_description.py" />
+        <option value="$PROJECT_DIR$/code/main.py" />
       </list>
     </option>
   </component>
@@ -603,7 +519,11 @@
       <created>1428557668974</created>
       <updated>1428557668974</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Step 3: created images for cloud pixels&#10;">
+      <created>1428684560624</created>
+      <updated>1428684560624</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -628,23 +548,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1135" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12760417" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12760417" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39962476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12760417" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39962476" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -683,7 +603,8 @@
     <MESSAGE value="Step 3 refactor coord and near, more generic signature function&#10;&#10;" />
     <MESSAGE value="Step 3: going back to adding a col for S, G" />
     <MESSAGE value="Step 3: clouds getting there." />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 3: clouds getting there." />
+    <MESSAGE value="Step 3: created images for cloud pixels&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 3: created images for cloud pixels&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -693,21 +614,11 @@
           <line>20</line>
           <option name="timeStamp" value="132" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/code/source_and_goal_description.py</url>
-          <line>43</line>
-          <option name="timeStamp" value="330" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/code/source_and_goal_description.py</url>
-          <line>42</line>
-          <option name="timeStamp" value="332" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="336" />
+      <option name="time" value="347" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -715,6 +626,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -722,6 +636,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="975">
           <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -729,6 +646,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1080">
           <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -736,6 +656,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="510">
           <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -798,34 +721,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/transitivity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.13537118" vertical-offset="1338" max-vertical-offset="2430">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/source_and_goal_description.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57843137" vertical-offset="231" max-vertical-offset="3015">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#2395#3897#0" expanded="false" />
+            <element signature="e#3992#4217#0" expanded="false" />
+            <element signature="e#4460#4747#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26960784" vertical-offset="375" max-vertical-offset="1215">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="1230">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/spatial_rels.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12254902" vertical-offset="750" max-vertical-offset="1950">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/transitivity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2183406" vertical-offset="0" max-vertical-offset="2400">
+          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
