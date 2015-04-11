@@ -42,7 +42,7 @@ def main():
     # Unfiltered, filtered matrices
     T, M = transitivity(mbrs, img)
     # source_and_goal_description(mbrs, S, G, T, img)
-    path_finding(M)
+    path_finding(T, M)
 
 
     return True
