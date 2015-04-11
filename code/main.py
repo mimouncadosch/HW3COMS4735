@@ -6,6 +6,8 @@ from spatial_rels import *
 from time import sleep
 from transitivity import *
 from source_and_goal_description import *
+from path_finding import *
+import MyQueue
 
 S = (-1, -1)
 G = (-1, -1)
@@ -22,25 +24,25 @@ def main():
     extrema = find_extrema(labeled)
     building_descriptions(img, labeled, extrema, mbrs)
 
-    cv.namedWindow("image")
-    cv.setMouseCallback("image", capture_position)
+    # cv.namedWindow("image")
+    # cv.setMouseCallback("image", capture_position)
     #
-    # # display the image and wait for a keypress
-    cv.imshow("image", img)
-    cv.waitKey(0) & 0xFF
-
-    # Show source and goal points
-    cv.circle(img, S, 1, (255,0,0),2)
-    cv.circle(img, G, 1, (255,0,0),2)
-    cv.imshow("image", img)
-    cv.waitKey(0)
+    # # # display the image and wait for a keypress
+    # cv.imshow("image", img)
+    # cv.waitKey(0) & 0xFF
+    #
+    # # Show source and goal points
+    # cv.circle(img, S, 1, (255,0,0),2)
+    # cv.circle(img, G, 1, (255,0,0),2)
+    # cv.imshow("image", img)
+    # cv.waitKey(0)
 
     # spatial_relationships(S, G, img, mbrs)
 
     # Unfiltered, filtered matrices
     T, M = transitivity(mbrs, img)
-    source_and_goal_description(mbrs, S, G, T, img)
-    # get_name(2)
+    # source_and_goal_description(mbrs, S, G, T, img)
+    path_finding(M)
 
 
     return True

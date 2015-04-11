@@ -19,7 +19,7 @@
 19="Dodge"
 20="Kent"
 21="College Walk"
-22="Journalism & Furnald"
+22="Journalism & Furnald"	
 23="Hamilton, Hartley, Wallach & John Jay"
 24="Lion's Court"
 25="Lerner Hall"

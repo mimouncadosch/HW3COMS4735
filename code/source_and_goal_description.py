@@ -31,6 +31,7 @@ def draw_point_clouds(M, P):
     blds_s = []
     rels =  ['N', 'S', 'E', 'W', "Ne"]
 
+    # TODO: Draw point clouds for G also
     I = np.ones((495, 275), np.uint8)
 
     # Do it for source first
