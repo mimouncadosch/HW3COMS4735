@@ -5,6 +5,7 @@ import MyQueue
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib
+from transitivity import get_building_names
 """
 T is unfiltered transitivity matrix
 M is filtered transitivity matrix
@@ -12,44 +13,71 @@ M is filtered transitivity matrix
 def path_finding(T, M):
 
 
-
     b1 = 0   # id of building closest to source (B1)
+    # bn = 2
     bn = 25  # id of building closest to goal (BN)
 
-    # n = M.shape[0]
-    # # Unified matrix: or product of all relationships of matrix M
-    # U = np.zeros((n, n))
-    # for p in range(5):
-    #     # Matrix U represents the directed graph for all buildings in the image
-    #     U = cv.bitwise_or(U, M[:,:,p])
+    n = M.shape[0]
+    # Unified matrix: or product of all relationships of matrix M
+    U = np.zeros((n, n))
+    for p in range(5):
+        # Matrix U represents the directed graph for all buildings in the image
+        U = cv.bitwise_or(U, M[:,:,p])
 
-    U = np.zeros((8,8))
-    U[1,0] = 1
-    U[3,0] = 1
-    U[6,0] = 1
-
-    U[0,1] = 1
-    U[4,1] = 1
-    U[5,1] = 1
-
-    U[5,2] = 1
-    U[7,2] = 1
-
-    U[0,3] = 1
-    U[5,3] = 1
-
-    U[1,4] = 1
-    U[6,4] = 1
-
-    U[1,5] = 1
-    U[2,5] = 1
-    U[3,5] = 1
-
-    U[0,6] = 1
-    U[4,6] = 1
-
-    U[2,7] = 1
+    # plot_graph(U)
+    # U = np.zeros((8,8))
+    # U[1,0] = 1
+    # U[3,0] = 1
+    # U[6,0] = 1
     #
+    # U[0,1] = 1
+    # U[4,1] = 1
+    # U[5,1] = 1
+    #
+    # U[5,2] = 1
+    # U[7,2] = 1
+    #
+    # U[0,3] = 1
+    # U[5,3] = 1
+    #
+    # U[1,4] = 1
+    # U[6,4] = 1
+    #
+    # U[1,5] = 1
+    # U[2,5] = 1
+    # U[3,5] = 1
+    #
+    # U[0,6] = 1
+    # U[4,6] = 1
+    #
+    # U[2,7] = 1
+    dir_array, bfs_array = breadth_first_search(b1, bn, U)
+
+    # print bfs_array
+
+    names = get_building_names()
+    # print dir_array
+
+    # print filtered_array
+    for i in range(len(dir_array)):
+        print names[dir_array[i]]
+    # print_directions(dir_array, M)
+    return True
+
+
+# def filter_dir_array(dir_array, U):
+#     s = dir_array[0]
+#     filtered_dir_array = [s]
+#
+#     for g in range(len(dir_array)):
+#         if U[g, s] == True:
+#             continue
+#         elif U[g, s] == False:
+#             filtered_dir_array.append(dir_array[g])
+#
+#     return filtered_dir_array
+
+def plot_graph(U, names):
     G = nx.from_numpy_matrix(U)
 
     # label
@@ -66,12 +94,12 @@ def path_finding(T, M):
     #
     # nodes
     nx.draw_networkx_nodes(G,pos,
-                           nodelist=[0,1,2,3],
+                           nodelist=range(13),
                            node_color='r',
                            node_size=500,
                        alpha=0.8)
     nx.draw_networkx_nodes(G,pos,
-                           nodelist=[4,5,6,7],
+                           nodelist=range(13,26),
                            node_color='b',
                            node_size=500,
                        alpha=0.8)
@@ -88,17 +116,15 @@ def path_finding(T, M):
 
     # some math labels
     labels={}
-    letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
-    for i in range(len(letters)):
-        labels[i] = letters[i]
+
+    for i in range(len(names)):
+        labels[i] = names[i]
     nx.draw_networkx_labels(G,pos,labels,font_size=16)
 
     plt.axis('off')
-    plt.savefig("labels_and_colors.png") # save as png
     plt.show() # display
+    # plt.savefig("labels_and_colors.png") # save as png
 
-    # dir_array = breadth_first_search(b1, bn, U)
-    # print_directions(dir_array, M)
     return True
 
 def print_directions(dir_array, M):
@@ -126,8 +152,9 @@ def breadth_first_search(b1, bn, U):
     if b1 == bn:
         return True
 
-    # previous = [None] * 10
-    previous = []
+    previous = [None] * n
+    # previous = []
+    bfs = []
 
     # Mark all buildings as not visited
     visited = [False] * n
@@ -150,7 +177,7 @@ def breadth_first_search(b1, bn, U):
     while not q.isEmpty():
         # Deque a building from the top of the queue and print it
         b = q.dequeue()
-        # print b
+        bfs.append(b)
         # Get all adjacent buildings of the dequeued building b
         rels_b = U[:, b]
         rels_b[b] = False
@@ -158,31 +185,34 @@ def breadth_first_search(b1, bn, U):
         for i in range(len(adjs)):
             # If found destination building, stop
             curr = adjs[i]  # current node
-            # if curr == bn:
-            #     break
-                # return True
 
             if visited[curr] == False:
-                previous.append(b)
+                # print "previous["+str(curr)+"]="+str(b)
+                previous[curr] = b
                 visited[curr] = True
                 q.enqueue(curr)
 
-    previous = unique(previous, bn)
-    return previous
+    path = unique(previous, bn, b1)
+    return path, bfs
 
 """
-Removes duplicates from array, while preserving order of items.
-Stops copying from original (redundant) to unique after reaching the destination node index
+dest
+origin
 """
-def unique(arr, dest):
-    arr_unique = []
-    for i in range(len(arr)):
-        if arr[i] not in arr_unique:
-            arr_unique.append(arr[i])
-        if arr[i] == dest:
+def unique(arr, dest, origin):
+    found = False
+    path = []
+    init = arr.index(dest)
+    # Init must be index of origin, not whatever it is now.
+    j = init
+    while not found:
+        k = arr[j]
+        path.append(k)
+        if k == origin:
             break
+        j = k
 
-    return arr_unique
+    return path
 
 
 """

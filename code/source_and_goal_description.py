@@ -14,7 +14,7 @@ def source_and_goal_description(mbrs, S, G, T, img):
     # Return ids of buildings containing source and target points
     # Ids returned are indexed (1,28), similar to names
     ids = get_bld_ids(mbrs, S, G)
-    names = get_building_names(mbrs)
+    names = get_building_names()
     print_spatial_rels_for_s_and_g(ids, names, F)
 
     P = 40
