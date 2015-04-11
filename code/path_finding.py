@@ -21,32 +21,7 @@ def path_finding(M):
 
     breadth_first_search(b1, bn, U)
     return True
-    # U = np.zeros((8,8))
-    # U[1,0] = 1
-    # U[3,0] = 1
-    # U[6,0] = 1
-    #
-    # U[0,1] = 1
-    # U[4,1] = 1
-    # U[5,1] = 1
-    #
-    # U[5,2] = 1
-    # U[7,2] = 1
-    #
-    # U[0,3] = 1
-    # U[5,3] = 1
-    #
-    # U[1,4] = 1
-    # U[6,4] = 1
-    #
-    # U[1,5] = 1
-    # U[2,5] = 1
-    # U[3,5] = 1
-    #
-    # U[0,6] = 1
-    # U[4,6] = 1
-    #
-    # U[2,7] = 1
+
 
 def breadth_first_search(b1, bn, U):
     if b1 == bn:

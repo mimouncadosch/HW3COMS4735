@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d2ed68-a08f-4160-aa5b-b94f12ab633d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/path_finding.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/ass3-table.txt" afterPath="$PROJECT_DIR$/data/ass3-table.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/main.py" afterPath="$PROJECT_DIR$/code/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/source_and_goal_description.py" afterPath="$PROJECT_DIR$/code/source_and_goal_description.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/path_finding.py" afterPath="$PROJECT_DIR$/code/path_finding.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="3_hw3_COMS_4735_mpc2160.iws" />
@@ -54,8 +51,8 @@
       <file leaf-file-name="path_finding.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/path_finding.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5882353" vertical-offset="0" max-vertical-offset="1695">
-              <caret line="24" column="16" selection-start-line="23" selection-start-column="4" selection-end-line="24" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.24509804" vertical-offset="195" max-vertical-offset="1320">
+              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -549,7 +546,11 @@
       <created>1428690008369</created>
       <updated>1428690008369</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Step 4: completed BFS with known answer&#10;&#10;">
+      <created>1428746930767</created>
+      <updated>1428746930767</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -632,7 +633,8 @@
     <MESSAGE value="Step 3: created images for cloud pixels&#10;" />
     <MESSAGE value="Step 3: fixed filtering for S, G&#10;" />
     <MESSAGE value="Step 3: finished&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 3: finished&#10;&#10;" />
+    <MESSAGE value="Step 4: completed BFS with known answer&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 4: completed BFS with known answer&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -644,7 +646,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/code/path_finding.py</url>
-          <line>95</line>
+          <line>70</line>
           <option name="timeStamp" value="413" />
         </line-breakpoint>
       </breakpoints>
@@ -806,8 +808,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/path_finding.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5882353" vertical-offset="0" max-vertical-offset="1695">
-          <caret line="24" column="16" selection-start-line="23" selection-start-column="4" selection-end-line="24" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.24509804" vertical-offset="195" max-vertical-offset="1320">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
